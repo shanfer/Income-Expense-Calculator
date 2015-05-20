@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="incomereport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ed00c5e-ba8d-429e-b01f-d86db3360b3c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from temp_table]]>
+	</queryString>
+	<field name="t_id" class="java.lang.Object"/>
+	<field name="t_s_date" class="java.lang.Object"/>
+	<field name="t_category" class="java.lang.Object"/>
+	<field name="t_description" class="java.lang.Object"/>
+	<field name="t_amount" class="java.lang.Object"/>
+	<field name="t_narration" class="java.lang.Object"/>
+	<group name="t_id">
+		<groupExpression><![CDATA[$F{t_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="13" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="77" y="13" width="397" height="53" uuid="15b30e0f-0310-49ab-900f-e7c07ce88163"/>
+				<textElement textAlignment="Center">
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[Income status]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="12" width="48" height="20" uuid="1973a6a7-97a0-45f9-9e99-b0aab62fce09"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="12" width="73" height="20" uuid="2c8634f4-20ec-4d86-91c2-d1de7f7ca340"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="12" width="81" height="20" uuid="9a890d36-3834-4347-b7b0-e992dbcb970b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="12" width="59" height="20" uuid="778c4c2c-bef9-4e8c-87cd-c8afe7ade74a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="12" width="100" height="20" uuid="16f7378d-4580-4162-85a6-00d4b053cc26"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Narration]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="20" width="67" height="20" uuid="5261b09c-adb5-4c9a-80e0-966b27b4a062"/>
+				<textFieldExpression><![CDATA[$F{t_s_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="20" width="85" height="76" uuid="a644dae4-7d6b-491a-912d-83036887db1d"/>
+				<textFieldExpression><![CDATA[$F{t_category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="20" width="100" height="76" uuid="4c5f7be0-560c-4177-81c4-cd3d9ac3a30e"/>
+				<textFieldExpression><![CDATA[$F{t_description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="303" y="20" width="81" height="76" uuid="e534aa45-87ad-4e5f-9add-447de748833b"/>
+				<textFieldExpression><![CDATA[$F{t_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="20" width="136" height="76" uuid="a466e077-e87d-43dd-8af5-a0bcc5592f22"/>
+				<textFieldExpression><![CDATA[$F{t_narration}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="11" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="11" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="10" splitType="Stretch"/>
+	</summary>
+</jasperReport>
